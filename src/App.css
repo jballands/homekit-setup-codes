@@ -1,0 +1,133 @@
+.app {
+	max-width: 600px;
+	margin: 0 auto;
+	padding: 2rem;
+}
+
+header {
+	text-align: center;
+	margin-bottom: 3rem;
+}
+
+header h1 {
+	margin-bottom: 0.5rem;
+}
+
+header p {
+	opacity: 0.7;
+	margin: 0;
+}
+
+.form-container {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+}
+
+.input-group {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.input-group label {
+	font-weight: 600;
+	font-size: 1.1rem;
+}
+
+.form-input,
+.form-select {
+	padding: 0.75rem;
+	border: 2px solid rgba(255, 255, 255, 0.1);
+	border-radius: 8px;
+	font-size: 1.1em;
+	transition: border-color 0.2s ease;
+	background-color: rgba(255, 255, 255, 0.05);
+	color: inherit;
+}
+
+.form-input:focus,
+.form-select:focus {
+	outline: none;
+	border-color: #007aff;
+}
+
+.form-select {
+	cursor: pointer;
+}
+
+@media (prefers-color-scheme: light) {
+	.form-input,
+	.form-select {
+		border: 2px solid #e1e5e9;
+		background-color: white;
+		color: #333;
+	}
+}
+
+.generate-button {
+	background-color: #007aff;
+	color: white;
+	border: none;
+	padding: 1rem 2rem;
+	border-radius: 8px;
+	font-size: 1.1rem;
+	font-weight: 600;
+	cursor: pointer;
+	margin-top: 1rem;
+	transition: background-color 0.2s ease, opacity 0.2s ease;
+}
+
+.generate-button:hover:not(:disabled) {
+	background-color: #005bb5;
+}
+
+.generate-button:disabled {
+	background-color: rgba(255, 255, 255, 0.1);
+	color: rgba(255, 255, 255, 0.4);
+	cursor: not-allowed;
+	opacity: 0.6;
+}
+
+@media (prefers-color-scheme: light) {
+	.generate-button:disabled {
+		background-color: #cccccc;
+		color: #888;
+	}
+}
+
+.qr-code-container {
+	margin-top: 2rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1rem;
+}
+
+.qr-code-container svg {
+	width: 400px;
+	height: 540px;
+	max-width: 100%;
+}
+
+.download-button {
+	background-color: #34c759;
+	color: white;
+	border: none;
+	padding: 0.75rem 1.5rem;
+	border-radius: 8px;
+	font-size: 1.1rem;
+	font-weight: 600;
+	cursor: pointer;
+	transition: background-color 0.2s ease;
+}
+
+.download-button:hover {
+	background-color: #2aa84a;
+}
+
+.qr-code-details-container {
+	background: #343434;
+	border-radius: 15px;
+	padding: 25px;
+}
