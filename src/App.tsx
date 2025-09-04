@@ -6,10 +6,11 @@ import {
 	composeSetupUri,
 	// parseSetupUri,
 } from './qrCodeHelpers';
-import { HOMEKIT_CATEGORIES } from './homekitCategories';
+import { HOMEKIT_CATEGORIES } from './Form/possibleCategories';
 
 import Scan from './Scan';
 import { HomeKitDataContextProvider } from './HomeKitDataContext';
+import Form from './Form';
 
 function App() {
 	const [setupCode, setSetupCode] = useState<string | undefined>(undefined);
@@ -165,81 +166,7 @@ function App() {
 				<main className="form-container">
 					<Scan />
 
-					<div className="qr-code-details-container">
-						<div className="input-group">
-							<div
-								style={{
-									display: 'flex',
-									justifyContent: 'space-between',
-									alignItems: 'center',
-								}}
-							>
-								<label htmlFor="setup-code">Setup Code</label>
-							</div>
-							<input
-								id="setup-code"
-								type="text"
-								value={setupCode}
-								onChange={handleSetupCodeChange}
-								placeholder="Ex: 12345678"
-								className="form-input"
-							/>
-						</div>
-
-						<div className="input-group">
-							<label htmlFor="category">Device Category</label>
-							<select
-								id="category"
-								value={category}
-								onChange={e => setCategory(e.target.value)}
-								className="form-select"
-							>
-								<option value="">Select a category</option>
-								{HOMEKIT_CATEGORIES.map(cat => (
-									<option key={cat} value={cat}>
-										{cat.charAt(0).toUpperCase() + cat.slice(1)}
-									</option>
-								))}
-							</select>
-						</div>
-
-						<div className="input-group">
-							<label htmlFor="flag">Connection Type</label>
-							<select
-								id="flag"
-								value={flag ?? ''}
-								onChange={e => setFlag(Number(e.target.value))}
-								className="form-select"
-							>
-								<option value={1}>NFC</option>
-								<option value={2}>IP</option>
-								<option value={4}>BLE</option>
-								<option value={8}>
-									Wireless Accessory Configuration (WAC)/Apple's MFi
-								</option>
-							</select>
-						</div>
-
-						<div className="input-group">
-							<label htmlFor="setup-id">Setup ID</label>
-							<input
-								id="setup-id"
-								type="text"
-								value={setupId}
-								onChange={e => setSetupId(e.target.value)}
-								placeholder="Setup identifier"
-								className="form-input"
-							/>
-						</div>
-
-						<button
-							className="generate-button"
-							onClick={handleGenerate}
-							disabled={!isFormValid}
-						>
-							Generate HomeKit Setup Code
-						</button>
-					</div>
+					<Form />
 
 					{qrCodeSvg && (
 						<div className="qr-code-container">

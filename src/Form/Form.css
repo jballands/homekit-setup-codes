@@ -1,0 +1,94 @@
+.input-group {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.input-group label {
+	font-weight: 600;
+	font-size: 1.1rem;
+}
+
+.form-input {
+	padding: 0.75rem;
+	border: 2px solid rgba(255, 255, 255, 0.1);
+	border-radius: 8px;
+	font-size: 1.1em;
+	transition: border-color 0.2s ease;
+	background-color: rgba(255, 255, 255, 0.05);
+	color: inherit;
+}
+
+.form-input:focus {
+	outline: none;
+	border-color: #007aff;
+}
+
+@media (prefers-color-scheme: light) {
+	.form-input {
+		border: 2px solid #e1e5e9;
+		background-color: white;
+		color: #333;
+	}
+}
+
+.form-select {
+	padding: 0.75rem;
+	border: 2px solid rgba(255, 255, 255, 0.1);
+	border-radius: 8px;
+	font-size: 1.1em;
+	transition: border-color 0.2s ease;
+	background-color: rgba(255, 255, 255, 0.05);
+	color: inherit;
+	cursor: pointer;
+}
+
+.form-select:focus {
+	outline: none;
+	border-color: #007aff;
+}
+
+@media (prefers-color-scheme: light) {
+	.form-select {
+		border: 2px solid #e1e5e9;
+		background-color: white;
+		color: #333;
+	}
+}
+
+.generate-button {
+	background-color: #007aff;
+	color: white;
+	border: none;
+	padding: 1rem 2rem;
+	border-radius: 8px;
+	font-size: 1.1rem;
+	font-weight: 600;
+	cursor: pointer;
+	margin-top: 1rem;
+	transition: background-color 0.2s ease, opacity 0.2s ease;
+}
+
+.generate-button:hover:not(:disabled) {
+	background-color: #005bb5;
+}
+
+.generate-button:disabled {
+	background-color: rgba(255, 255, 255, 0.1);
+	color: rgba(255, 255, 255, 0.4);
+	cursor: not-allowed;
+	opacity: 0.6;
+}
+
+@media (prefers-color-scheme: light) {
+	.generate-button:disabled {
+		background-color: #cccccc;
+		color: #888;
+	}
+}
+
+.qr-code-details-container {
+	background: #343434;
+	border-radius: 15px;
+	padding: 25px;
+}

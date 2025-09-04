@@ -1,4 +1,4 @@
-export const HOMEKIT_CATEGORIES = [
+export const POSSIBLE_CATEGORIES = [
 	'airConditioner',
 	'airport',
 	'airPurifier',
