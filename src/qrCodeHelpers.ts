@@ -147,8 +147,8 @@ export const parseSetupUri = (setupUri: string): ParsedSetupUri | null => {
 	try {
 		let payload = BigInt(parseInt(payloadBase36, 36));
 
-		// Extract password (bottom 31 bits)
-		const password = (payload & BigInt(0x7fffffff)).toString();
+		// Extract password (bottom 27 bits)
+		const password = (payload & BigInt(0x7ffffff)).toString();
 		payload = payload >> BigInt(27);
 
 		// Extract flag (bottom 4 bits)

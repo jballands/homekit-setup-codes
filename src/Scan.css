@@ -1,0 +1,89 @@
+.input-group {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.input-group label {
+	font-weight: 600;
+	font-size: 1.1rem;
+}
+
+.form-input {
+	padding: 0.75rem;
+	border: 2px solid rgba(255, 255, 255, 0.1);
+	border-radius: 8px;
+	font-size: 1.1em;
+	transition: border-color 0.2s ease;
+	background-color: rgba(255, 255, 255, 0.05);
+	color: inherit;
+}
+
+.form-input:focus {
+	outline: none;
+	border-color: #007aff;
+}
+
+@media (prefers-color-scheme: light) {
+	.form-input {
+		border: 2px solid #e1e5e9;
+		background-color: white;
+		color: #333;
+	}
+}
+
+.scan-description {
+	font-size: 1.1rem;
+	color: #666;
+}
+
+.scan-controls {
+	display: flex;
+	gap: 10px;
+	margin-bottom: 10px;
+}
+
+.scan-input {
+	flex: 1;
+}
+
+.scan-button {
+	padding: 10px 15px;
+	color: white;
+	border: none;
+	border-radius: 6px;
+	cursor: pointer;
+	white-space: nowrap;
+}
+
+.scan-button.scanning {
+	background: #dc3545;
+}
+
+.scan-button:not(.scanning) {
+	background: #34c759;
+}
+
+.video-container {
+	margin-top: 10px;
+	display: flex;
+	justify-content: center;
+}
+
+.scan-video {
+	border-radius: 8px;
+	object-fit: cover;
+	transition: all 0.3s ease;
+}
+
+.scan-video.active {
+	width: 300px;
+	height: 225px;
+	border: 2px solid #007bff;
+}
+
+.scan-video:not(.active) {
+	width: 0;
+	height: 0;
+	border: none;
+}
